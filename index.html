@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EmprendeIgual - Plataforma web accesible para la visibilidad y comercialización de la Nacionalidad Épera (Eperãra Siapidaarã, pueblo de origen Emberá, 'pueblo de la caña brava') en la costa norte de Ecuador (Esmeraldas, ríos Cayapas y Santiago).">
+  <title>EmprendeIgual — Nacionalidad Épera (Pueblo de la Caña Brava)</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Hojas de Estilo -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       BARRA DE NAVEGACIÓN SUPERIOR (Exactamente 4 opciones principales)
+       Inicio | Explorar | Capacitación | Mi perfil
+       ========================================================================== -->
+  <header class="header-navbar" role="banner">
+    <div class="container nav-container">
+      <a href="#inicio" class="brand-logo nav-link" data-section="inicio" aria-label="EmprendeIgual Página de Inicio">
+        <div class="brand-icon">
+          <i data-lucide="sparkles"></i>
+        </div>
+        <div class="brand-name">
+          <span>EmprendeIgual</span>
+          <span class="brand-sub">Nacionalidad Épera • Eperãra Siapidaarã</span>
+        </div>
+      </a>
+
+      <!-- Menú principal de escritorio -->
+      <nav role="navigation" aria-label="Menú principal">
+        <ul class="nav-menu">
+          <li>
+            <a href="#inicio" class="nav-link active" data-section="inicio">
+              <i data-lucide="home"></i> Inicio
+            </a>
+          </li>
+          <li>
+            <a href="#explorar" class="nav-link" data-section="explorar">
+              <i data-lucide="compass"></i> Explorar
+            </a>
+          </li>
+          <li>
+            <a href="#capacitacion" class="nav-link" data-section="capacitacion">
+              <i data-lucide="graduation-cap"></i> Capacitación
+            </a>
+          </li>
+          <li>
+            <a href="#perfil" class="nav-link" data-section="perfil">
+              <i data-lucide="user"></i> Mi perfil
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Botones auxiliares de demostración -->
+      <div class="nav-actions">
+        <button class="btn btn-outline btn-sm" onclick="App.openModal('adminModal')" title="Panel administrativo de moderación (Simulación)">
+          <i data-lucide="shield-check"></i>
+          <span>Admin Demo</span>
+          <span id="adminPendingBadge" class="status-badge badge-status-pending hidden">0</span>
+        </button>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú de navegación">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú desplegable para móviles -->
+    <div class="mobile-nav-menu" id="mobileNavMenu">
+      <ul class="mobile-nav-list">
+        <li>
+          <a href="#inicio" class="nav-link active" data-section="inicio">
+            <i data-lucide="home"></i> Inicio
+          </a>
+        </li>
+        <li>
+          <a href="#explorar" class="nav-link" data-section="explorar">
+            <i data-lucide="compass"></i> Explorar
+          </a>
+        </li>
+        <li>
+          <a href="#capacitacion" class="nav-link" data-section="capacitacion">
+            <i data-lucide="graduation-cap"></i> Capacitación
+          </a>
+        </li>
+        <li>
+          <a href="#perfil" class="nav-link" data-section="perfil">
+            <i data-lucide="user"></i> Mi perfil
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="mainContent" role="main">
+    
+    <!-- ==========================================================================
+         MÓDULO 1: INICIO
+         ========================================================================== -->
+    <section id="section-inicio" class="main-section">
+      <!-- A. Encabezado principal (Hero) -->
+      <section class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-text-content">
+            <div class="hero-badge">
+              <i data-lucide="feather"></i> Pueblo de la Caña Brava • Origen Emberá
+            </div>
+            <h1 class="hero-title">
+              Descubre el talento y los emprendimientos de la <span class="highlight">Nacionalidad Épera</span>
+            </h1>
+            <p class="hero-desc">
+              Conoce la auténtica cestería en paja tetera, tejidos en damagua, arte en chaquiras y saberes del bosque húmedo del río Cayapas en la costa norte de Esmeraldas, Ecuador.
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-accent btn-lg" id="heroExploreBtn">
+                <i data-lucide="shopping-bag"></i> Explorar productos
+              </button>
+              <button class="btn btn-outline btn-lg" id="heroRegisterBtn" style="background: rgba(255,255,255,0.12); color:#fff; border-color: rgba(255,255,255,0.3);">
+                <i data-lucide="user-plus"></i> Registrar mi emprendimiento
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-banner-card" style="padding: 1.5rem;">
+              <div style="position: relative; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; height: 180px;">
+                <img src="assets/images/epera-mujer-chaquiras.jpg" alt="Mujer de la Nacionalidad Épera con pintura facial y collar tradicional de chaquiras" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(23,77,58,0.9); color:#fff; padding: 0.2rem 0.6rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700;">
+                  Eperãra Siapidaarã
+                </div>
+              </div>
+              <h3 class="hero-banner-title">
+                <i data-lucide="heart-handshake"></i>
+                Voz de Caña Brava (Siapadee)
+              </h3>
+              <p style="font-size: 0.92rem; color: rgba(255,255,255,0.9); margin-bottom: 0.75rem;">
+                Nacionalidad indígena de raíz <strong>Emberá</strong>, originaria de la cuenca del Chocó en Colombia y asentada en la costa norte de Ecuador a orillas de los ríos Cayapas y Santiago.
+              </p>
+              <ul class="hero-features-list" style="margin-top: 0.5rem; font-size: 0.88rem;">
+                <li>
+                  <i data-lucide="check-circle-2"></i>
+                  <span><strong>Fibras ancestrales:</strong> Cestería en paja tetera y telas vegetales de damagua.</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle-2"></i>
+                  <span><strong>Comercio directo:</strong> Contacto con las artesanas y artesanos de las comunidades.</span>
+                </li>
+                <li>
+                  <i data-lucide="check-circle-2"></i>
+                  <span><strong>Identidad viva:</strong> Respeto a su cosmovisión de espíritus protectores (Jai).</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galería fotográfica ilustrativa de la cultura Épera -->
+      <section style="background-color: var(--color-surface); padding: 2rem 0; border-bottom: 1px solid var(--color-border);">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; align-items: center;">
+            <div style="position: relative; border-radius: var(--radius-md); overflow: hidden; height: 140px; box-shadow: var(--shadow-sm);">
+              <img src="assets/images/epera-cesteria-collage.jpg" alt="Cestería tradicional de la Nacionalidad Épera" style="width: 100%; height: 100%; object-fit: cover;">
+              <span style="position: absolute; bottom: 6px; left: 6px; background: rgba(0,0,0,0.7); color:#fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px;">Cestería en Paja Tetera</span>
+            </div>
+            <div style="position: relative; border-radius: var(--radius-md); overflow: hidden; height: 140px; box-shadow: var(--shadow-sm);">
+              <img src="assets/images/epera-vestimenta-pareja.jpg" alt="Vestimenta y pintura corporal de jóvenes Épera" style="width: 100%; height: 100%; object-fit: cover;">
+              <span style="position: absolute; bottom: 6px; left: 6px; background: rgba(0,0,0,0.7); color:#fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px;">Vestimenta y Paruma Épera</span>
+            </div>
+            <div style="position: relative; border-radius: var(--radius-md); overflow: hidden; height: 140px; box-shadow: var(--shadow-sm);">
+              <img src="assets/images/epera-danza-musica.jpg" alt="Música tradicional y danza Épera con tambores" style="width: 100%; height: 100%; object-fit: cover;">
+              <span style="position: absolute; bottom: 6px; left: 6px; background: rgba(0,0,0,0.7); color:#fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px;">Música y Danza Tradicional</span>
+            </div>
+            <div style="position: relative; border-radius: var(--radius-md); overflow: hidden; height: 140px; box-shadow: var(--shadow-sm);">
+              <img src="assets/images/epera-retrato-conaie.jpg" alt="Comunidad Épera en el río Cayapas" style="width: 100%; height: 100%; object-fit: cover;">
+              <span style="position: absolute; bottom: 6px; left: 6px; background: rgba(0,0,0,0.7); color:#fff; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px;">Ríos Cayapas y Santiago</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- B. Emprendimientos destacados (Muestra de productos Épera) -->
+      <section class="section-py">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle-tag">Saberes Ancestrales</span>
+            <h2 class="section-title">Emprendimientos Destacados Épera</h2>
+            <p class="section-lead">Una muestra representativa del arte cestero, tallados tradicionales y productos agroforestales del pueblo de la caña brava.</p>
+          </div>
+
+          <div class="products-grid" id="featuredProductsGrid">
+            <!-- Cargado dinámicamente con JavaScript -->
+          </div>
+
+          <div style="text-align: center; margin-top: 3rem;">
+            <button class="btn btn-primary" onclick="App.navigateTo('explorar')">
+              <i data-lucide="grid"></i> Ver catálogo completo
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- C. ¿Cómo funciona EmprendeIgual? (Tres pasos fundamentales) -->
+      <section class="section-py" style="background-color: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle-tag">Ruta de Participación</span>
+            <h2 class="section-title">¿Cómo funciona EmprendeIgual?</h2>
+            <p class="section-lead">Tres pasos sencillos para que los talleres y artesanos Épera comercialicen sus creaciones directamente.</p>
+          </div>
+
+          <div class="how-it-works-grid">
+            <div class="step-card">
+              <span class="step-number">01</span>
+              <div class="step-icon">
+                <i data-lucide="user-plus"></i>
+              </div>
+              <h3>1. Registra tu emprendimiento</h3>
+              <p>Crea tu perfil con el nombre de tu taller familiar o comunitario, comunidad de origen en el río Cayapas y canal de contacto.</p>
+            </div>
+
+            <div class="step-card">
+              <span class="step-number">02</span>
+              <div class="step-icon">
+                <i data-lucide="file-plus-2"></i>
+              </div>
+              <h3>2. Publica tus productos o servicios</h3>
+              <p>Sube fotos de tus canastos en paja tetera, lienzos en damagua o cacao silvestre, explicando los materiales y el tiempo de trabajo.</p>
+            </div>
+
+            <div class="step-card">
+              <span class="step-number">03</span>
+              <div class="step-icon">
+                <i data-lucide="messages-square"></i>
+              </div>
+              <h3>3. Conecta con compradores</h3>
+              <p>Recibe consultas y pedidos de compradores locales, turistas e instituciones interesados en apoyar el comercio ético indígena.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- D. Sección detallada sobre la Nacionalidad Épera -->
+      <section class="section-py">
+        <div class="container">
+          <div class="culture-box">
+            <div class="culture-content">
+              <span class="section-subtitle-tag" style="background-color: #ffffff; color: var(--color-primary);">Pueblo de la Caña Brava</span>
+              <h3>La Nacionalidad Épera (Eperãra Siapidaarã)</h3>
+              <p>
+                La <strong>Nacionalidad Épera</strong> (cuyo nombre significa <em>«pueblo de la caña brava»</em> o <em>«voz de caña brava»</em>) es un pueblo indígena de <strong>origen Emberá</strong> proveniente de la región del Chocó en Colombia, que a partir de la década de 1960 se asentó en la costa norte de Ecuador, en la provincia de Esmeraldas (cantones Eloy Alfaro y San Lorenzo, principalmente a orillas de los ríos Cayapas y Santiago, como Santa Rosa, Bella Aurora y Las Palmas).
+              </p>
+              <p>
+                Su idioma propio es el <strong>Siapadee</strong> (o <em>Sia Pedee</em>, que significa 'idioma propio'). Su vida comunitaria se fundamenta en una relación de profundo equilibrio con la selva pluvial y los ríos, donde el médico tradicional o <strong>Jaipana</strong> cuida la armonía con los espíritus protectores (<em>Jai</em>).
+              </p>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); border-top: 1px solid #c7dcd0; padding-top: 0.75rem;">
+                <em>Respeto cultural:</em> Esta plataforma visibiliza la autenticidad de sus fibras ancestrales —la <strong>paja tetera</strong> y la corteza de <strong>damagua</strong>— promoviendo un comercio justo que valore su esfuerzo manual e identidad histórica.
+              </p>
+            </div>
+
+            <div class="culture-highlights-card">
+              <h4 style="margin-bottom: 0.75rem; color: var(--color-primary);">Rasgos Culturales Distintivos:</h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.92rem;">
+                <li><i data-lucide="check" style="color: var(--color-primary); vertical-align: middle;"></i> <strong>Cestería en Paja Tetera:</strong> Tejidos geométricos apretados con tinturas de hojas, mangle y achiote.</li>
+                <li><i data-lucide="check" style="color: var(--color-primary); vertical-align: middle;"></i> <strong>Tela de Damagua:</strong> Corteza vegetal machacada y pintada a mano con jagua.</li>
+                <li><i data-lucide="check" style="color: var(--color-primary); vertical-align: middle;"></i> <strong>Pintura Corporal con Jagua:</strong> Trazos geométricos tradicionales que expresan identidad y protección.</li>
+                <li><i data-lucide="check" style="color: var(--color-primary); vertical-align: middle;"></i> <strong>Cosmovisión Fluvial:</strong> Navegación en canoa y respeto por la biodiversidad del Chocó biogeográfico.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- E. Beneficios de la plataforma -->
+      <section class="section-py" style="background-color: var(--color-surface); border-top: 1px solid var(--color-border);">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle-tag">Impacto Comunitario</span>
+            <h2 class="section-title">Beneficios de EmprendeIgual</h2>
+            <p class="section-lead">Diseñado para generar valor tangible en la economía de las familias Épera de la costa norte de Esmeraldas.</p>
+          </div>
+
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <i data-lucide="eye" style="font-size: 2rem;"></i>
+              <h3>Mayor visibilidad comercial</h3>
+              <p>Permite a los talleres cesteros del río Cayapas contar con un escaparate digital abierto al país y al mundo.</p>
+            </div>
+
+            <div class="benefit-card">
+              <i data-lucide="phone-call" style="font-size: 2rem;"></i>
+              <h3>Contacto directo sin intermediarios</h3>
+              <p>El valor económico total de las artesanías llega íntegramente a las manos de las artesanas y artesanos de la comunidad.</p>
+            </div>
+
+            <div class="benefit-card">
+              <i data-lucide="book-open-check" style="font-size: 2rem;"></i>
+              <h3>Capacitación digital práctica</h3>
+              <p>Guías paso a paso para fotografiar tejidos, redactar fichas comerciales y manejar precios justos.</p>
+            </div>
+
+            <div class="benefit-card">
+              <i data-lucide="scale" style="font-size: 2rem;"></i>
+              <h3>Igualdad de género y dignidad</h3>
+              <p>Reconocimiento equitativo para mujeres y hombres que lideran iniciativas productivas y artesanales.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ==========================================================================
+         MÓDULO 2: EXPLORAR PRODUCTOS Y SERVICIOS (Catálogo interactivo)
+         ========================================================================== -->
+    <section id="section-explorar" class="main-section hidden section-py">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle-tag">Catálogo Cultural Épera</span>
+          <h2 class="section-title">Explora Productos y Saberes Épera</h2>
+          <p class="section-lead">Descubre canastos en paja tetera, lienzos en damagua, accesorios en chaquiras y productos de las chacras del río Cayapas.</p>
+        </div>
+
+        <!-- Barra de herramientas: Buscador y Filtros -->
+        <div class="catalog-toolbar">
+          <div class="search-input-wrap">
+            <i data-lucide="search"></i>
+            <input type="text" id="catalogSearchInput" placeholder="Buscar por canasto, paja tetera, damagua, chaquiras, cacao o taller..." aria-label="Buscador de productos">
+          </div>
+
+          <div class="filters-row">
+            <!-- Filtro de Categorías -->
+            <div class="category-filter-buttons" role="tablist" aria-label="Filtrar por categoría">
+              <button class="filter-btn active" data-category="todas">Todas</button>
+              <button class="filter-btn" data-category="Artesanías y Cestería">Cestería y Artesanías</button>
+              <button class="filter-btn" data-category="Accesorios y Tejidos">Accesorios y Chaquiras</button>
+              <button class="filter-btn" data-category="Alimentos Tradicionales">Alimentos y Cacao</button>
+              <button class="filter-btn" data-category="Productos de la Selva">Productos de la Selva</button>
+              <button class="filter-btn" data-category="Servicios Comunitarios">Turismo y Servicios</button>
+            </div>
+
+            <!-- Filtros secundarios: Precio y botón restablecer -->
+            <div class="secondary-filters">
+              <label for="catalogPriceSelect" class="sr-only" style="display:none;">Filtrar por precio</label>
+              <select id="catalogPriceSelect" class="custom-select" aria-label="Filtrar por rango de precio">
+                <option value="todos">Cualquier precio</option>
+                <option value="bajo">Económico (hasta $10 USD)</option>
+                <option value="medio">Medio ($10 a $25 USD)</option>
+                <option value="alto">Superior (más de $25 USD)</option>
+              </select>
+
+              <button class="btn btn-outline btn-sm" id="resetFiltersBtn" title="Restablecer todos los filtros">
+                <i data-lucide="rotate-ccw"></i> Limpiar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicador de total y nota de datos demostrativos -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <span id="catalogCountBadge" class="status-badge badge-status-approved" style="font-size: 0.85rem;">Cargando catálogo Épera...</span>
+          <span class="text-muted text-sm"><i data-lucide="info" style="vertical-align: middle;"></i> Fichas pedagógicas inspiradas en la cultura de la Nacionalidad Épera.</span>
+        </div>
+
+        <!-- Grid de Tarjetas de Productos -->
+        <div class="products-grid" id="catalogGrid">
+          <!-- Cargado con js/catalogo.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MÓDULO 3: CAPACITACIÓN DIGITAL
+         ========================================================================== -->
+    <section id="section-capacitacion" class="main-section hidden section-py">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle-tag">Centro de Aprendizaje</span>
+          <h2 class="section-title">Aprende y fortalece tu emprendimiento Épera</h2>
+          <p class="section-lead">Guías didácticas, directas y prácticas pensadas para personas con conocimientos digitales básicos en el entorno comunitario.</p>
+        </div>
+
+        <!-- Barra de progreso persistente en localStorage -->
+        <div class="progress-container-card">
+          <div class="progress-header">
+            <div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.2rem;"><i data-lucide="trophy" style="color: var(--color-accent); vertical-align: middle;"></i> Tu Progreso de Aprendizaje</h3>
+              <p class="text-muted text-sm" id="trainingProgressCount">0 de 6 módulos</p>
+            </div>
+            <span style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary);" id="trainingProgressText">0% completado</span>
+          </div>
+          <div class="progress-bar-bg" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar-fill" id="trainingProgressBar"></div>
+          </div>
+        </div>
+
+        <!-- Grilla de los 6 recursos educativos -->
+        <div class="training-grid" id="trainingGrid">
+          <!-- Renderizado dinámicamente con js/capacitacion.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MÓDULO 4: MI PERFIL Y GESTIÓN DE PUBLICACIONES
+         ========================================================================== -->
+    <section id="section-perfil" class="main-section hidden section-py">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle-tag">Gestión Comunitaria</span>
+          <h2 class="section-title">Mi Perfil y Taller Épera</h2>
+          <p class="section-lead">Administra la información de tu iniciativa artesanal o productiva y publica piezas en el catálogo.</p>
+        </div>
+
+        <div class="banner-notice info">
+          <i data-lucide="shield-alert"></i>
+          <div>
+            <strong>Entorno de Demostración Local</strong>
+            <p>Este prototipo académico almacena la información directamente en tu navegador mediante <code>localStorage</code>. No se envían contraseñas a servidores externos.</p>
+          </div>
+        </div>
+
+        <div class="profile-wrapper">
+          <!-- Barra lateral del perfil -->
+          <aside class="profile-sidebar">
+            <div class="profile-avatar-box">
+              <div class="profile-avatar">
+                <i data-lucide="user" style="width: 44px; height: 44px;"></i>
+              </div>
+              <h3 id="profileDisplayName" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Cargando...</h3>
+              <p class="text-muted text-sm" id="profileDisplayVenture">Taller Épera Siapidaarã</p>
+              <span id="profileDisplayRole" class="status-badge badge-status-approved" style="margin-top: 0.5rem;">Persona Emprendedora</span>
+            </div>
+
+            <!-- Navegación interna de la sección Mi Perfil -->
+            <div class="profile-nav-tabs">
+              <button class="profile-subtab-btn active" data-target="subviewMyProducts">
+                <i data-lucide="package"></i> Mis Publicaciones
+              </button>
+              <button class="profile-subtab-btn" data-target="subviewNewProduct">
+                <i data-lucide="plus-circle"></i> Nueva Publicación
+              </button>
+              <button class="profile-subtab-btn" data-target="subviewProfileData">
+                <i data-lucide="store"></i> Datos del Taller / Emprendimiento
+              </button>
+              <button class="profile-subtab-btn" data-target="subviewAccountData">
+                <i data-lucide="settings"></i> Cuenta de Usuario
+              </button>
+            </div>
+          </aside>
+
+          <!-- Área de contenido de Mi Perfil -->
+          <div class="profile-content-area">
+            
+            <!-- Subvista 1: Mis Publicaciones -->
+            <div id="subviewMyProducts" class="profile-subview">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <div>
+                  <h3>Publicaciones de mi taller Épera</h3>
+                  <p class="text-muted text-sm" id="userProductsCount">Consultando publicaciones...</p>
+                </div>
+                <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-target=\'subviewNewProduct\']').click()">
+                  <i data-lucide="plus"></i> Crear publicación
+                </button>
+              </div>
+
+              <div id="userProductsList">
+                <!-- Cargado con js/perfil.js -->
+              </div>
+            </div>
+
+            <!-- Subvista 2: Crear / Editar Publicación -->
+            <div id="subviewNewProduct" class="profile-subview hidden">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h3 id="formProductActionTitle">Crear Nueva Publicación Épera</h3>
+                <button id="cancelEditProductBtn" class="btn btn-outline btn-sm hidden">
+                  <i data-lucide="x"></i> Cancelar edición
+                </button>
+              </div>
+
+              <form id="productForm">
+                <div class="form-group">
+                  <label for="prodFormName">Nombre de la pieza, producto o servicio *</label>
+                  <input type="text" id="prodFormName" class="form-control" required placeholder="Ej. Canasto tradicional en fibra de paja tetera">
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label for="prodFormCategory">Categoría Épera *</label>
+                    <select id="prodFormCategory" class="form-control" required>
+                      <option value="Artesanías y Cestería">Artesanías y Cestería (Paja Tetera / Damagua)</option>
+                      <option value="Accesorios y Tejidos">Accesorios y Chaquiras</option>
+                      <option value="Alimentos Tradicionales">Alimentos y Cacao</option>
+                      <option value="Productos de la Selva">Productos de la Selva (Jagua / Fibras)</option>
+                      <option value="Servicios Comunitarios">Turismo y Talleres Comunitarios</option>
+                      <option value="Otros">Otros</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="prodFormPrice">Precio referencial en USD *</label>
+                    <input type="number" id="prodFormPrice" class="form-control" step="0.50" min="0" required placeholder="Ej. 24.00">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="prodFormImage">URL de la imagen (Opcional en demo)</label>
+                  <input type="url" id="prodFormImage" class="form-control" placeholder="https://ejemplo.com/foto.jpg (Si se deja vacío se asignará una foto acorde a la artesanía)">
+                  <small class="text-muted text-sm">Para la demostración académica puedes dejarlo vacío o pegar una URL directa.</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="prodFormDesc">Descripción resumida (para la tarjeta del catálogo) *</label>
+                  <textarea id="prodFormDesc" class="form-control" rows="2" required placeholder="Breve resumen visible en el catálogo..."></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="prodFormExtended">Descripción detallada y significado cultural</label>
+                  <textarea id="prodFormExtended" class="form-control" rows="3" placeholder="Explica detalladamente la función, dimensiones, significado de los diseños y cuidados..."></textarea>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label for="prodFormMaterials">Fibras e insumos utilizados (opcional)</label>
+                    <input type="text" id="prodFormMaterials" class="form-control" placeholder="Ej. Paja tetera, tintes naturales de mangle y achiote">
+                  </div>
+                  <div class="form-group">
+                    <label for="prodFormProcess">Proceso de elaboración (opcional)</label>
+                    <input type="text" id="prodFormProcess" class="form-control" placeholder="Ej. Cosecha en menguante, raspado, tinturado a leña y 5 días de tejido">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="prodFormContact">Medio de contacto autorizado para esta pieza</label>
+                  <input type="text" id="prodFormContact" class="form-control" placeholder="Ej. WhatsApp comunitario o correo">
+                </div>
+
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                  <button type="submit" class="btn btn-primary">
+                    <i data-lucide="check"></i> Guardar Publicación
+                  </button>
+                  <button type="button" class="btn btn-secondary" onclick="PerfilModule.resetProductForm()">
+                    Limpiar formulario
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Subvista 3: Datos del Taller / Emprendimiento -->
+            <div id="subviewProfileData" class="profile-subview hidden">
+              <h3 style="margin-bottom: 1.5rem;">Información del Taller Comunitario Épera</h3>
+              
+              <form id="userProfileForm">
+                <div class="form-group">
+                  <label for="profVentureName">Nombre del taller o iniciativa *</label>
+                  <input type="text" id="profVentureName" class="form-control" required placeholder="Ej. Taller Épera Siapidaarã - Voz de Caña Brava">
+                </div>
+
+                <div class="form-group">
+                  <label for="profVentureDesc">Descripción de la actividad comercial y cultural *</label>
+                  <textarea id="profVentureDesc" class="form-control" rows="3" required placeholder="Describe qué produce tu taller y qué valores de la nacionalidad Épera promueve..."></textarea>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label for="profVentureCategory">Categoría principal</label>
+                    <select id="profVentureCategory" class="form-control">
+                      <option value="Artesanías y Cestería">Artesanías y Cestería</option>
+                      <option value="Accesorios y Tejidos">Accesorios y Chaquiras</option>
+                      <option value="Alimentos Tradicionales">Alimentos Tradicionales</option>
+                      <option value="Productos de la Selva">Productos de la Selva</option>
+                      <option value="Servicios Comunitarios">Turismo y Servicios Comunitarios</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="profVentureLocation">Ubicación territorial *</label>
+                    <input type="text" id="profVentureLocation" class="form-control" required placeholder="Ej. Río Cayapas / Borbón, Eloy Alfaro, Esmeraldas">
+                  </div>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label for="profVentureContact">Canal de contacto autorizado *</label>
+                    <input type="text" id="profVentureContact" class="form-control" required placeholder="Ej. WhatsApp comunitario / correo">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="profVentureResponsible">Persona o familia responsable (opcional)</label>
+                    <input type="text" id="profVentureResponsible" class="form-control" placeholder="Ej. Darwin Cabezas">
+                  </div>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                  <button type="submit" class="btn btn-primary">
+                    <i data-lucide="save"></i> Guardar Cambios del Taller
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Subvista 4: Datos de la Cuenta de Demostración -->
+            <div id="subviewAccountData" class="profile-subview hidden">
+              <h3 style="margin-bottom: 1.5rem;">Registro de Demostración</h3>
+              
+              <div class="form-group">
+                <label for="profFullName">Nombre completo *</label>
+                <input type="text" id="profFullName" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label for="profEmail">Correo electrónico *</label>
+                <input type="email" id="profEmail" class="form-control" required>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="profUserType">Tipo de usuario</label>
+                  <select id="profUserType" class="form-control">
+                    <option value="emprendedor">Persona emprendedora / Artesana Épera</option>
+                    <option value="cliente">Cliente / Comprador aliado</option>
+                    <option value="capacitador">Capacitador / Formador</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="profGender">Género (opcional con inclusión)</label>
+                  <select id="profGender" class="form-control">
+                    <option value="prefiero_no_decir">Prefiero no responder</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="no_binario">No binario</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="banner-notice info" style="margin-top: 1.5rem;">
+                <i data-lucide="check-shield"></i>
+                <p>Las condiciones de demostración académica garantizan que ningún dato personal se transmita a servidores de terceros.</p>
+              </div>
+
+              <button type="button" class="btn btn-primary" onclick="PerfilModule.saveProfile()">
+                <i data-lucide="save"></i> Actualizar Datos de Usuario
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       PIE DE PÁGINA INSTITUCIONAL CON SECCIONES ACADÉMICAS, MODELO E INCLUSIÓN
+       ========================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>EmprendeIgual</h4>
+          <p class="footer-motto">"Conectamos ideas, oportunidades y talento sin barreras"</p>
+          <p style="font-size: 0.9rem;">
+            Plataforma web académica orientada a la visibilidad comercial, inclusión digital e igualdad de oportunidades de la <strong>Nacionalidad Épera</strong> (Eperãra Siapidaarã, pueblo de la caña brava) en la costa norte de Ecuador (ríos Cayapas y Santiago, Esmeraldas).
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#inicio" onclick="App.navigateTo('inicio')">Inicio</a></li>
+            <li><a href="#explorar" onclick="App.navigateTo('explorar')">Catálogo Épera</a></li>
+            <li><a href="#capacitacion" onclick="App.navigateTo('capacitacion')">Módulos de Capacitación</a></li>
+            <li><a href="#perfil" onclick="App.navigateTo('perfil')">Mi Perfil y Emprendimiento</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h5>Proyecto Académico</h5>
+          <ul>
+            <li><a href="javascript:void(0)" onclick="App.openModal('academicInfoModal')"><i data-lucide="graduation-cap" style="vertical-align: middle;"></i> Acerca del Proyecto</a></li>
+            <li><a href="javascript:void(0)" onclick="App.openModal('businessModelModal')"><i data-lucide="briefcase" style="vertical-align: middle;"></i> Modelo de Negocio</a></li>
+            <li><a href="javascript:void(0)" onclick="App.openModal('genderInclusionModal')"><i data-lucide="heart" style="vertical-align: middle;"></i> Igualdad e Inclusión</a></li>
+            <li><a href="javascript:void(0)" onclick="App.openModal('validationModal')"><i data-lucide="clipboard-check" style="vertical-align: middle;"></i> Validación del Prototipo</a></li>
+            <li><a href="javascript:void(0)" onclick="App.openModal('adminModal')"><i data-lucide="shield" style="vertical-align: middle;"></i> Panel de Moderación Demo</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © 2026 EmprendeIgual. Proyecto desarrollado para la asignatura de Emprendimiento — Desarrollo de Software — Instituto Superior Tecnológico Alberto Enríquez. San Lorenzo / Eloy Alfaro, Esmeraldas, Ecuador.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALES DEL SISTEMA (Detalles, Contacto, Admin, Información, etc.)
+       ========================================================================== -->
+
+  <!-- 1. Modal de Detalles de Producto -->
+  <div class="modal-backdrop" id="productDetailsModal" role="dialog" aria-modal="true" aria-labelledby="modalDetailsTitle">
+    <div class="modal-window modal-window-lg">
+      <div class="modal-header">
+        <h3 id="modalDetailsTitle" style="font-size: 1.25rem;"><i data-lucide="package"></i> Ficha Detallada del Producto Épera</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Cerrar modal"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body" id="productDetailsModalBody">
+        <!-- Contenido inyectado dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Modal de Simulación de Contacto Comercial -->
+  <div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalContactTitle">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="modalContactTitle"><i data-lucide="message-square"></i> Contactar al Taller Épera</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Cerrar modal"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body" id="contactModalBody">
+        <!-- Inyectado dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Modal de Módulo de Capacitación -->
+  <div class="modal-backdrop" id="trainingModal" role="dialog" aria-modal="true" aria-labelledby="modalTrainingTitle">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="modalTrainingTitle"><i data-lucide="book-open"></i> Contenido Didáctico</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Cerrar lección"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body" id="trainingModalBody">
+        <!-- Inyectado con js/capacitacion.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Modal: Panel Administrativo de Demostración -->
+  <div class="modal-backdrop" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="modalAdminTitle">
+    <div class="modal-window modal-window-lg">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalAdminTitle"><i data-lucide="shield-check"></i> Panel de Demostración Administrativo</h3>
+          <p class="text-muted text-sm">Simulación sin seguridad real para moderación de contenido y aprobación de publicaciones.</p>
+        </div>
+        <button class="modal-close-btn" data-close-modal aria-label="Cerrar panel"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <!-- Métricas del Panel -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+          <div class="admin-card-metric">
+            <div class="admin-metric-icon"><i data-lucide="layers"></i></div>
+            <div class="admin-metric-data">
+              <div class="num" id="statTotalPubs">0</div>
+              <div class="label">Total Publicaciones</div>
+            </div>
+          </div>
+          <div class="admin-card-metric">
+            <div class="admin-metric-icon" style="color: var(--color-warning);"><i data-lucide="clock"></i></div>
+            <div class="admin-metric-data">
+              <div class="num" id="statPendingPubs">0</div>
+              <div class="label">Pendientes</div>
+            </div>
+          </div>
+          <div class="admin-card-metric">
+            <div class="admin-metric-icon" style="color: var(--color-success);"><i data-lucide="check-circle"></i></div>
+            <div class="admin-metric-data">
+              <div class="num" id="statApprovedPubs">0</div>
+              <div class="label">Aprobadas</div>
+            </div>
+          </div>
+          <div class="admin-card-metric">
+            <div class="admin-metric-icon" style="color: var(--color-danger);"><i data-lucide="x-circle"></i></div>
+            <div class="admin-metric-data">
+              <div class="num" id="statRejectedPubs">0</div>
+              <div class="label">Rechazadas</div>
+            </div>
+          </div>
+          <div class="admin-card-metric">
+            <div class="admin-metric-icon"><i data-lucide="flag"></i></div>
+            <div class="admin-metric-data">
+              <div class="num" id="statReportsCount">0</div>
+              <div class="label">Reportes</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subpestañas del Administrador -->
+        <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+          <button class="btn btn-outline btn-sm admin-nav-btn active" data-tab="publications">
+            <i data-lucide="list"></i> Revisión de Publicaciones
+          </button>
+          <button class="btn btn-outline btn-sm admin-nav-btn" data-tab="reports">
+            <i data-lucide="flag"></i> Reportes de Contenido
+          </button>
+          <button class="btn btn-danger-outline btn-sm" id="adminResetDataBtn" style="margin-left: auto;">
+            <i data-lucide="rotate-ccw"></i> Restablecer Datos de Demostración
+          </button>
+        </div>
+
+        <!-- Pestaña 1: Tabla de Publicaciones -->
+        <div id="adminTabPubs">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <span class="text-muted text-sm">Las publicaciones creadas quedan en estado <strong>Pendiente</strong> hasta que un administrador las aprueba.</span>
+            <select id="adminStatusFilter" class="custom-select" style="font-size: 0.85rem;">
+              <option value="todos">Todos los estados</option>
+              <option value="pendiente">Solo Pendientes</option>
+              <option value="aprobado">Solo Aprobados</option>
+              <option value="rechazado">Solo Rechazados</option>
+            </select>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Taller / Emprendimiento</th>
+                  <th>Categoría</th>
+                  <th>Precio</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductsTableBody">
+                <!-- Inyectado con js/administracion.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Pestaña 2: Reportes de contenido -->
+        <div id="adminTabReports" class="hidden">
+          <div id="adminReportsContainer">
+            <!-- Inyectado con js/administracion.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Modal: Información Académica (Sección 10) -->
+  <div class="modal-backdrop" id="academicInfoModal" role="dialog" aria-modal="true" aria-labelledby="modalAcademicTitle">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="modalAcademicTitle"><i data-lucide="graduation-cap"></i> Acerca del Proyecto Académico</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Cerrar modal"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="background-color: var(--color-secondary); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+          <h4 style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: 0.25rem;">Instituto Superior Tecnológico Alberto Enríquez</h4>
+          <p style="font-weight: 600; color: var(--color-accent-hover);">Carrera: Desarrollo de Software | Asignatura: Emprendimiento</p>
+          <p style="font-size: 0.95rem; margin-top: 0.5rem;"><strong>Proyecto:</strong> EMPRENDEIGUAL</p>
+          <p style="font-size: 0.95rem;"><strong>Lema:</strong> <em>"Conectamos ideas, oportunidades y talento sin barreras"</em></p>
+        </div>
+
+        <div class="form-grid-2" style="margin-bottom: 1.5rem;">
+          <div>
+            <h5 style="color: var(--color-primary); margin-bottom: 0.5rem;"><i data-lucide="users"></i> Integrantes:</h5>
+            <ul style="list-style: none; padding-left: 0.5rem; font-size: 0.95rem;">
+              <li>• Darwin David Cabezas Alvarez</li>
+              <li>• Anny Canche</li>
+            </ul>
+          </div>
+          <div>
+            <h5 style="color: var(--color-primary); margin-bottom: 0.5rem;"><i data-lucide="user-check"></i> Docente Evaluadora:</h5>
+            <p style="font-size: 0.95rem;">Ana Solís</p>
+            <p class="text-muted text-sm">San Lorenzo / Eloy Alfaro, Esmeraldas, Ecuador — Año 2026</p>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--color-border); padding-top: 1.25rem;">
+          <h5 style="color: var(--color-primary); margin-bottom: 0.5rem;"><i data-lucide="file-text"></i> Conclusión Académica:</h5>
+          <p style="font-size: 0.93rem; color: var(--color-text);">
+            <strong>Problema:</strong> Las barreras geográficas y de conectividad aíslan comercialmente a los talleres artesanales de la Nacionalidad Épera en la cuenca de los ríos Cayapas y Santiago, reduciendo sus ingresos y dependiendo de intermediarios informales.
+          </p>
+          <p style="font-size: 0.93rem; color: var(--color-text);">
+            <strong>Solución:</strong> EmprendeIgual demuestra cómo una plataforma web accesible, de arquitectura ligera y sin comisiones abusivas permite exhibir la cestería en paja tetera, lienzos en damagua y productos tradicionales directamente a compradores éticos.
+          </p>
+          <p style="font-size: 0.93rem; color: var(--color-text);">
+            <strong>Enfoque Inclusivo y Sostenibilidad:</strong> El modelo promueve la equidad de género, valora la identidad histórica Emberá del pueblo de la caña brava y propone un camino sostenible de formación y comercialización comunitaria.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Modal: Modelo de Negocio (Sección 8) -->
+  <div class="modal-backdrop" id="businessModelModal" role="dialog" aria-modal="true" aria-labelledby="modalBusinessTitle">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="modalBusinessTitle"><i data-lucide="briefcase"></i> Modelo de Negocio Propuesto</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Cerrar modal"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="banner-notice info">
+          <i data-lucide="info"></i>
+          <p>Este marco corresponde a una <strong>propuesta de sostenibilidad económica académica</strong> para un futuro despliegue real, no a cobros efectivos dentro de este prototipo.</p>
+        </div>
+
+        <div style="display: grid; gap: 1.25rem;">
+          <div class="benefit-card">
+            <h4><i data-lucide="gem"></i> Propuesta de Valor</h4>
+            <p>Brindar visibilidad comercial digital accesible a emprendimientos de la Nacionalidad Épera y facilitar su contacto directo con potenciales compradores, eliminando intermediarios abusivos y acompañando su proceso con capacitación digital gratuita.</p>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="benefit-card">
+              <h4><i data-lucide="users"></i> Clientes y Usuarios</h4>
+              <ul style="list-style: disc; margin-left: 1.2rem; font-size: 0.9rem;">
+                <li>Personas emprendedoras y artesanas de la nacionalidad Épera.</li>
+                <li>Compradores conscientes, turistas y tiendas de comercio justo.</li>
+                <li>Organizaciones sociales y educativas interesadas en desarrollo local.</li>
+              </ul>
+            </div>
+            <div class="benefit-card">
+              <h4><i data-lucide="share-2"></i> Canales de Conexión</h4>
+              <ul style="list-style: disc; margin-left: 1.2rem; font-size: 0.9rem;">
+                <li>Plataforma web accesible responsive.</li>
+                <li>Mensajería directa (WhatsApp/email verificado).</li>
+                <li>Ferias comunitarias presenciales y redes sociales.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="benefit-card">
+              <h4><i data-lucide="dollar-sign"></i> Posibles Ingresos Futuros</h4>
+              <ul style="list-style: disc; margin-left: 1.2rem; font-size: 0.9rem;">
+                <li>Planes de posicionamiento y fotografía avanzada opcionales.</li>
+                <li>Alianzas con ONGs y cooperativas de fomento productivo.</li>
+                <li>Talleres especializados presenciales de alfabetización digital.</li>
+                <li>Publicidad patrocinada ética de iniciativas sostenibles.</li>
+              </ul>
+            </div>
+            <div class="benefit-card">
+              <h4><i data-lucide="wallet"></i> Costos Principales</h4>
+              <ul style="list-style: disc; margin-left: 1.2rem; font-size: 0.9rem;">
+                <li>Alojamiento web y dominio anual.</li>
+                <li>Mantenimiento técnico y soporte accesible.</li>
+                <li>Seguridad y resguardo de datos.</li>
+                <li>Talleres presenciales y difusión comunitaria en territorio.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Modal: Igualdad de Género e Inclusión (Sección 7) -->
+  <div class="modal-backdrop" id="genderInclusionModal" role="dialog" aria-modal="true" aria-labelledby="modalGenderTitle">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="modalGenderTitle"><i data-lucide="heart"></i> Igualdad de Oportunidades e Inclusión</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Cerrar modal"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <h4 style="margin-bottom: 0.75rem;">¿Cómo contribuye EmprendeIgual a la igualdad?</h4>
+        <p>
+          En consonancia con los Objetivos de Desarrollo Sostenible (ODS 5: Igualdad de Género y ODS 10: Reducción de las Desigualdades), EmprendeIgual está concebido desde su arquitectura para garantizar un entorno equitativo y seguro:
+        </p>
+
+        <div style="display: grid; gap: 1rem; margin-top: 1.5rem;">
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div class="step-icon" style="width: 42px; height: 42px; font-size: 1rem;"><i data-lucide="check"></i></div>
+            <div>
+              <strong>Participación abierta y plural:</strong>
+              <p class="text-muted text-sm">Permite registrar iniciativas a mujeres, hombres y personas de cualquier identidad de género sin distinciones de roles predeterminados ni requisitos discriminatorios.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div class="step-icon" style="width: 42px; height: 42px; font-size: 1rem;"><i data-lucide="check"></i></div>
+            <div>
+              <strong>Superación de estereotipos laborales:</strong>
+              <p class="text-muted text-sm">Cualquier persona puede publicar productos agrícolas, cestería, tallados o servicios comunitarios sin que el sistema asigne labores según género o edad.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div class="step-icon" style="width: 42px; height: 42px; font-size: 1rem;"><i data-lucide="check"></i></div>
+            <div>
+              <strong>Algoritmos de visibilidad transparentes:</strong>
+              <p class="text-muted text-sm">El orden de las publicaciones responde a criterios objetivos (categoría, fecha, filtros del usuario), impidiendo sesgos o discriminación algorítmica.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div class="step-icon" style="width: 42px; height: 42px; font-size: 1rem;"><i data-lucide="check"></i></div>
+            <div>
+              <strong>Mecanismo de protección y reporte ético:</strong>
+              <p class="text-muted text-sm">Dispone de herramientas para denunciar publicaciones discriminatorias, engañosas o contrarias a la dignidad humana.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Modal: Validación del Prototipo Académico (Sección 9) -->
+  <div class="modal-backdrop" id="validationModal" role="dialog" aria-modal="true" aria-labelledby="modalValTitle">
+    <div class="modal-window modal-window-lg">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalValTitle"><i data-lucide="clipboard-check"></i> Sección de Evaluación y Validación Académica</h3>
+          <p class="text-muted text-sm">Registro de opiniones de usuarios evaluadores sobre usabilidad, claridad e impacto inclusivo.</p>
+        </div>
+        <button class="modal-close-btn" data-close-modal aria-label="Cerrar modal"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulario de Evaluación Académica -->
+        <form id="academicValidationForm" style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: var(--radius-md); margin-bottom: 2rem;">
+          <h4 style="margin-bottom: 1rem;"><i data-lucide="pen-tool"></i> Registrar Nueva Evaluación de Prueba</h4>
+          
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="valParticipantId">Identificador del participante / Alias *</label>
+              <input type="text" id="valParticipantId" class="form-control" placeholder="Ej. Evaluador_02 o Anónimo" required>
+            </div>
+            <div class="form-group">
+              <label for="valUserProfile">Rol del Evaluador</label>
+              <select id="valUserProfile" class="form-control">
+                <option value="Estudiante de Desarrollo">Estudiante de Desarrollo</option>
+                <option value="Docente / Académico">Docente / Académico</option>
+                <option value="Emprendedor/a Local">Emprendedor/a Local</option>
+                <option value="Comprador / Ciudadano">Comprador / Ciudadano</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="valQ1">1. ¿Comprendió para qué sirve EmprendeIgual? *</label>
+            <input type="text" id="valQ1" class="form-control" required placeholder="Ej. Sí, conecta artesanos de la nacionalidad Épera con compradores directos...">
+          </div>
+
+          <div class="form-group">
+            <label for="valQ2">2. ¿Pudo identificar cómo registrar un emprendimiento? *</label>
+            <input type="text" id="valQ2" class="form-control" required placeholder="Ej. Sí, en el botón del inicio y en la pestaña de Mi Perfil...">
+          </div>
+
+          <div class="form-group">
+            <label for="valQ3">3. ¿Encontró fácilmente los productos? *</label>
+            <input type="text" id="valQ3" class="form-control" required placeholder="Ej. Sí, el buscador en tiempo real y los filtros por cestería, paja tetera y damagua son rápidos...">
+          </div>
+
+          <div class="form-group">
+            <label for="valQ4">4. ¿Los botones y formularios fueron fáciles de utilizar? *</label>
+            <input type="text" id="valQ4" class="form-control" required placeholder="Ej. Muy claros, tienen buen contraste y mensajes al completar acciones...">
+          </div>
+
+          <div class="form-group">
+            <label for="valQ5">5. ¿Considera que la plataforma ofrece igualdad de oportunidades? *</label>
+            <input type="text" id="valQ5" class="form-control" required placeholder="Ej. Sí, visibiliza equitativamente a todas las personas emprendedoras...">
+          </div>
+
+          <div class="form-group">
+            <label for="valQ6">6. ¿Qué mejoraría? *</label>
+            <textarea id="valQ6" class="form-control" rows="2" required placeholder="Sugerencias constructivas para futuras versiones..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            <i data-lucide="send"></i> Guardar Evaluación en Sistema Local
+          </button>
+        </form>
+
+        <!-- Lista de Resultados de Evaluación Guardados en localStorage -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h4>Evaluaciones Registradas</h4>
+          <span class="status-badge badge-status-approved" id="validationCountBadge">0 respuestas</span>
+        </div>
+
+        <div id="validationResultsList">
+          <!-- Inyectado con js/app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Modal: Reporte de Contenido -->
+  <div class="modal-backdrop" id="reportModal" role="dialog" aria-modal="true" aria-labelledby="modalReportTitle">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="modalReportTitle"><i data-lucide="flag"></i> Reportar Publicación</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Cerrar modal"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="reportProductLabel" style="font-weight: 700; margin-bottom: 1rem; color: var(--color-primary);"></p>
+        <form id="contentReportForm">
+          <input type="hidden" id="reportProductId">
+          <input type="hidden" id="reportProductName">
+
+          <div class="form-group">
+            <label for="reportReason">Motivo del reporte *</label>
+            <select id="reportReason" class="form-control" required>
+              <option value="Contenido discriminatorio o estereotipos ofensivos">Contenido discriminatorio u ofensivo</option>
+              <option value="Posible fraude o información falsa">Posible fraude o datos falsos</option>
+              <option value="Uso indebido de identidad cultural">Uso indebido de identidad cultural</option>
+              <option value="Otro motivo">Otro motivo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="reportComments">Detalles u observaciones *</label>
+            <textarea id="reportComments" class="form-control" rows="3" required placeholder="Describe brevemente por qué consideras que debe revisarse esta publicación..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="reportEmail">Tu correo electrónico (opcional para seguimiento)</label>
+            <input type="email" id="reportEmail" class="form-control" placeholder="nombre@correo.com">
+          </div>
+
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+            <button type="submit" class="btn btn-danger">
+              <i data-lucide="flag"></i> Enviar reporte al panel administrativo
+            </button>
+            <button type="button" class="btn btn-secondary" data-close-modal>
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Modal de Confirmación Genérico -->
+  <div class="modal-backdrop" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirmModalTitle">
+    <div class="modal-window" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3 id="confirmModalTitle" style="color: var(--color-danger);"><i data-lucide="alert-triangle"></i> Confirmar Acción</h3>
+        <button class="modal-close-btn" data-close-modal aria-label="Cerrar"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="confirmModalMessage" style="margin-bottom: 1.5rem;">¿Estás seguro de continuar con esta operación?</p>
+        <div style="display: flex; justify-content: flex-end; gap: 1rem;">
+          <button class="btn btn-secondary" data-close-modal>Cancelar</button>
+          <button class="btn btn-danger" id="confirmModalOkBtn">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor flotante de notificaciones Toast -->
+  <div class="toast-container" aria-live="polite">
+    <div class="toast" id="appToast">
+      <i data-lucide="info" id="appToastIcon"></i>
+      <span id="appToastMessage">Notificación del sistema</span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SCRIPTS MODULARES (Carga ordenada de datos, lógica y vistas)
+       ========================================================================== -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/perfil.js"></script>
+  <script src="js/capacitacion.js"></script>
+  <script src="js/administracion.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

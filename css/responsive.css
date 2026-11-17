@@ -1,0 +1,195 @@
+/* ==========================================================================
+   EMPRENDEIGUAL - ESTILOS RESPONSIVE Y ACCESIBILIDAD
+   Media queries para celulares, tablets, laptops y pantallas grandes.
+   ========================================================================== */
+
+/* ---------------- DISPOSITIVOS TABLET Y MENORES (<= 992px) ---------------- */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .culture-box {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .profile-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ---------------- DISPOSITIVOS MÓVILES (<= 768px) ---------------- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .nav-menu {
+    display: none; /* Ocultar menú horizontal en móvil */
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Menú desplegable móvil */
+  .mobile-nav-menu {
+    display: none;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--color-surface);
+    border-bottom: 2px solid var(--color-primary);
+    box-shadow: var(--shadow-lg);
+    padding: 1.5rem;
+    z-index: 99;
+  }
+
+  .mobile-nav-menu.open {
+    display: block;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .mobile-nav-list .nav-link {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .how-it-works-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .user-product-item {
+    grid-template-columns: 80px 1fr;
+    gap: 1rem;
+  }
+
+  .user-product-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .modal-window {
+    max-height: 95vh;
+    padding: 0;
+  }
+
+  .modal-body {
+    padding: 1.25rem;
+  }
+
+  .modal-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .secondary-filters {
+    justify-content: space-between;
+  }
+
+  .custom-select {
+    flex-grow: 1;
+  }
+}
+
+/* ---------------- PANTALLAS PEQUEÑAS (<= 480px) ---------------- */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .training-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-price-tag {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ---------------- REGLAS DE ACCESIBILIDAD ---------------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Indicadores de foco visibles para teclado */
+:focus-visible {
+  outline: 3px solid var(--color-accent) !important;
+  outline-offset: 3px !important;
+}
+
+/* Soporte de alto contraste */
+@media (forced-colors: active) {
+  .btn, .nav-link, .product-card, .filter-btn {
+    border: 1px solid ButtonText;
+  }
+}
+
